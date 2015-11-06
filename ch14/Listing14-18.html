@@ -27,6 +27,7 @@
                     }
                 });
     </script>
+    <script src="customFilters.js"></script>
 </head>
 <body ng-controller="defaultCtrl">
 <div class="panel panel-default">
@@ -53,9 +54,9 @@
             </tr>
             </thead>
             <tbody>
-            <tr ng-repeat="p in products | orderBy: myCustomSorter">
-                <td>{{p.name}}</td>
-                <td>{{p.category}}</td>
+            <tr ng-repeat="p in products | orderBy:[myCustomSorter, '-price'] | limitTo: 5">
+                <td>{{p.name | labelCase }}</td>
+                <td>{{p.category | labelCase:true }}</td>
                 <td>{{p.expiry}}</td>
                 <td class="text-right">{{p.price | currency }}</td>
             </tr>
