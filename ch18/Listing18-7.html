@@ -1,0 +1,25 @@
+<!doctype html>
+<html ng-app="exampleApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Services and Modules</title>
+    <script src="angular.js"></script>
+    <script src="directives.js"></script>
+    <script src="services.js"></script>
+    <link href="bootstrap.css" rel="stylesheet"/>
+    <link href="bootstrap-theme.css" rel="stylesheet"/>
+    <script>
+        angular.module("exampleApp", ["customDirectives", "customServices"])
+                .controller("defaultCtrl", function($scope, logService){
+                    $scope.data = {
+                        cities: ["London", "New York", "Paris"],
+                        totalClicks = 0;
+                    };
+                });
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>
